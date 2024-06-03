@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="width: 80%; display: block; margin-left: 15%;">
+    <div class="row align-items-center">
+        <!-- Text and Buttons on the Left, with reduced width -->
+        <div class="col-lg-6">
+            <h1 style="font-size: 36px; font-weight: bold;">Automate System Testing with AssistantLM</h1>
+            <p style="font-size: 18px; max-width: 80%;">Introducing AssistantLM, your personal assistant for all things government-related. Seamlessly navigate through complex information and services with expert guidance from top-tier AI models. From visa applications to residence permits, AssistantLM ensures you have the information you need, precisely when you need it.</p>
+            <a href="#" class="btn btn-primary btn-lg rounded-pill me-2" style="background-color: rgb(16, 28, 36); border: None" role="button">GitHub</a>
+            <a href="#try-AssistantLM" class="btn btn-secondary btn-lg rounded-pill" style="background-color: rgb(49, 158, 151); border: None" role="button">Use AssistantLM</a>
+        </div>
+
+        <!-- Logo on the Right, now using a smaller column -->
+        <div class="col-lg-6 d-flex justify-content-end">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="AssistantLM Logo" width="512" height="512" style="width: 512px; height: 512px;">
+        </div>
+    </div>
+</div>
+
+
+<hr style="color: gray; width: 70%; display: block; margin-left: auto; margin-right: auto; padding-top: 60px; margin-bottom: -30px;" id="features">
+
+<!-- Features Section -->
+<div class="container text-center mt-5" >
+    <h1 style="font-weight: bold; font-size: 40pt">Features</h1>
+    <div class="row justify-content-center mt-4">
+        <!-- Efficiency Feature -->
+        <div class="col-md-10 d-flex align-items-center justify-content-center mb-3">
+            <img src="{{ url_for('static', filename='clock.jpg') }}" alt="Efficiency" style="width: 512px; height: 512px; margin-bottom: -10%;">
+            <div class="row" style="width: 60%; line-height: 20pt;">
+                <h2 style="flex-grow: 1; text-align: left; font-size: 30pt;">Efficiency</h2>
+                <p style="flex-grow: 1; text-align: left;">AssistantLM leverages cutting-edge AI models to rapidly retrieve and present accurate government-related information. With real-time data scraping and a robust vector database, it ensures that you get the most relevant information in a fraction of the time. No more endless searching—AssistantLM delivers the answers you need swiftly, allowing you to make informed decisions quickly.</p>
+            </div>
+        </div>
+        <!-- Reliability Feature with reversed layout -->
+        <div class="col-md-10 d-flex align-items-center justify-content-center flex-row-reverse mb-3" style="margin-left: 10%;">
+            <img src="{{ url_for('static', filename='bricks.png') }}" alt="Reliability" style="width: 512px; height: 512px; margin-bottom: -10%;">
+            <div class="row" style="width: 60%; line-height: 20pt;">
+                <h2 style="flex-grow: 1; text-align: left; font-size: 30pt;">Reliability</h2>
+                <p style="flex-grow: 1; text-align: left;">Count on AssistantLM for precise and up-to-date responses. By integrating multiple LLMs like GPT-4, Llama-2, and Falcon-40b, it cross-verifies information to provide you with the most dependable answers. Whether you're looking for visa details or navigating complex government services, AssistantLM ensures you have the correct information at your fingertips, reducing the risk of errors and misinformation.</p>
+            </div>
+        </div>
+        <!-- Rapid Development Feature -->
+        <div class="col-md-10 d-flex align-items-center justify-content-center mb-3">
+            <img src="{{ url_for('static', filename='trend.jpg') }}" alt="Rapid Development" style="width: 512px; height: 512px;">
+            <div class="row" style="width: 60%; line-height: 20pt;">
+                <h2 style="flex-grow: 1; text-align: left; font-size: 30pt;">Productivty</h2>
+                <p style="flex-grow: 1; text-align: left;">Maximize your productivity with AssistantLM. This tool streamlines your search process, whether you need information on visas, residence permits, or other government services. By consolidating data from various sources and presenting it in a clear, concise manner, AssistantLM allows you to focus on what matters most. Experience seamless interactions, save valuable time, and achieve more with AssistantLM guiding your way through the intricacies of government-related information and services.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<hr style="color: gray; width: 70%; display: block; margin-left: auto; margin-right: auto; padding-top: 60px; margin-bottom: -30px;" id="try-AssistantLM">
+<!-- Try AssistantLM Section -->
+<div class="container text-center mt-5" style="width: 50%" >
+    <h1 style="font-weight: bold; font-size: 40pt;">Use AssistantLM</h1>
+    <form class="mt-4" action="{{ url_for('submit_form') }}" method="post">
+        <div class="mb-3">
+            <textarea class="form-control" id="prompt" name="prompt" placeholder="Prompt" rows="8" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(49, 158, 151); border: None; width: 15%; height: 50px; font-size: 15pt;">Run</button>
+    </form>
+</div>
+
+<hr style="color: gray; width: 70%; display: block; margin-left: auto; margin-right: auto;">
+<!-- About Us Section -->
+<div class="container text-center mt-5"  style="width: 70%" id="about-us">
+    <h1 style="font-weight: bold; font-size: 40pt; text-align: center;">About Us</h1>
+    <div class="row mt-4">
+        <!-- First Team Member -->
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='person.jpeg') }}" alt="Member 1" class="img-fluid rounded-circle" style="width: 280px; height: 280px; object-fit: cover;">
+            <h2 style="font-weight: bold; margin: 5%" >Contributor</h2>
+            <p style="width: 70%; display: block; margin-left: auto; margin-right: auto;">A computer science masters student at KAUST with a focus on software engineering and deep learning</p>
+        </div>
+        
+        <!-- Second Team Member -->
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='person.jpeg') }}" alt="Member 2" class="img-fluid rounded-circle" style="width: 280px; height: 280px; object-fit: cover;">
+            <h2 style="font-weight: bold; margin: 5%" >Contributor</h2>
+            <p style="width: 70%; display: block; margin-left: auto; margin-right: auto;">A computer science masters student at KAUST with a focus on software engineering and cybersecurity</p>
+        </div>
+        
+        <!-- Third Team Member -->
+        <div class="col-md-4 justify-content-center">
+            <img src="{{ url_for('static', filename='person.jpeg') }}" alt="Member 3" class="img-fluid rounded-circle" style="width: 280px; height: 280px; object-fit: cover;">
+            <h2 style="font-weight: bold; margin: 5%" >Contributor</h2>
+            <p style="width: 70%; display: block; margin-left: auto; margin-right: auto;">A computer science masters student at KAUST with a focus on software engineering</p>
+        </div>
+    </div>
+</div>
+
+
+<hr style="color: gray; width: 70%; display: block; margin-left: auto; margin-right: auto;"  id="contact-us">
+<div class="container text-center mt-5" style="width: 50%">
+    <h1 style="font-weight: bold; font-size: 40pt; text-align: center;">Contact Us</h1>
+    <form class="mt-4">
+        <div class="mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="message" name="message" rows="8" placeholder="Type your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(49, 158, 151); border: None; height: 50px; font-size: 15pt;">Send Message</button>
+    </form>
+</div>
+
+{% endblock %}
