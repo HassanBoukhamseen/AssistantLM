@@ -16,7 +16,8 @@ from config import (
     PINECONE_API_KEY,
     INDEX_NAME,
     SYSTEM_PROMPT,
-    RESPONSE_EVAL_SYSTEM_PROMPT
+    RESPONSE_EVAL_SYSTEM_PROMPT,
+    ENGINEER_SYSTEM_PROMPT
 )
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -24,26 +25,19 @@ index = pc.Index(INDEX_NAME)
 lemmatizer = spacy.load("en_core_web_sm")
 encoder = SentenceTransformer('all-MiniLM-L6-v2')
 
-lorum_ipsum = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-prompt = ""
-
 def engineer_prompt(user_prompt, context):
-    optimizer_prompt = f'''You will now recieve a prompt asking about a 
-    governmental process in the UAE. Along this prompt, the 15 most 
-    relevant entries taken from data scraped from UAE governmental 
-    websites are included. Phrase the context information given for the best coherence.
-    The prompt is:\n {user_prompt} \n and the scraped 
-    context info is:\n {context}. 
-    You are also NOT allowed to use background info or add into the contex in any way,
-    shape, or form. Your resposne will be directly fed into another LLM. Therefore,
-    I dont want your reply to include anything but the two parts I asked: 
-    Coherently phrase prompt and context info. Do not remove any details from relevant context. Make your prompt concise (about 200 words). Start with the context first, then say: based on this info, then ask the prompt'''
+    optimizer_prompt = f'''
+        Prompt: {user_prompt}
+        Scraped Context Info: {context}
+    '''
     response = GPT_CLIENT.chat.completions.create(
         model=CHATGPT4,
         messages=[
+            {"role": "system", "content": ENGINEER_SYSTEM_PROMPT},
             {"role": "user", "content": optimizer_prompt}
         ],
-        stream=False
+        stream=False,
+        temperature=0.01,
     )
     prompt_context = ''.join([choice.message.content for choice in response.choices])
     return prompt_context
