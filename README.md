@@ -1,4 +1,4 @@
-```
+
 # AssistantLM: Interactive Chat and Analysis System
 
 AssistantLM is an AI-driven chat application designed to provide users with insightful and context-aware responses. Utilizing multiple advanced language models, this system retrieves relevant information from a vector database, refines user prompts, and generates optimized responses. The application features real-time streaming of responses, a comprehensive analysis page to review the performance of different models, and a 3D visualization of database vectors. Ideal for users seeking an interactive, informative, and efficient AI-assisted conversation experience.
@@ -8,6 +8,7 @@ AssistantLM is an AI-driven chat application designed to provide users with insi
 ### 1. Create a Python Environment
 
 Create a new Python environment using your preferred method. For example, using `venv`:
+
 ```sh
 python3 -m venv AssistantLM-env
 ```
