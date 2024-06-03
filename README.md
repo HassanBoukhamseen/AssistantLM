@@ -42,6 +42,7 @@ AssistantLM is an AI-driven chat application designed to provide users with insi
 Create a new Python environment using your preferred method. For example, using `venv`:
 ```sh
 python3 -m venv AssistantLM-env
+cd AssistantLM-env
 ```
 ### 2. Clone the Repository
 Clone the repository to your local machine:
@@ -51,7 +52,7 @@ git clone <Repository_URL>
 ### 3. Navigate to the Project Directory
 Change directory to the project directory:
 ```sh
-cd AssistantLM-env/AssistantLM
+cd AssistantLM
 ```
 ### 4. Install Dependencies
 Install the required Python packages:
