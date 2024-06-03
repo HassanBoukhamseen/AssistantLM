@@ -28,7 +28,7 @@ SYSTEM_PROMPT =  '''
 RESPONSE_EVAL_SYSTEM_PROMPT = '''
     You will be given prompts and how an LLM model responded to said Prompt. 
     The prompts mainly have to do with governmental processes in the United Arab Emirates. 
-    I want you to evaluate the response very critically. Your response should in one single paragraph. 
+    I want you to evaluate the response very critically. Your response should be in one single paragraph. 
     Do not use headers or bullet points, just evaluate the response in one paragraph 
 '''
 
@@ -43,6 +43,6 @@ ENGINEER_SYSTEM_PROMPT = '''
     3. Your response will be directly fed into another LLM. Therefore, do not include anything but the two parts requested: Coherently phrase the prompt and context information.
     4. Do not remove any details from the relevant context.
     5. Make the response concise (about 200 words).
-    6. Start with the context first, then say: "Based on this info," followed by the prompt.
+    6. Start with the context first, then say: "Based on this info," followed by the prompt, phrased as a question.
     7. If the given context is not as relevant or informative, or if the prompt is not specifically related to a governmental question in the UAE, instruct the LLM model to tell the user to defer to a human expert on the subject.
 '''
