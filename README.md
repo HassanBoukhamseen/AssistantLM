@@ -1,3 +1,63 @@
+# AssistantLM: Interactive Chat and Analysis System
+
+AssistantLM is an AI-driven chat application designed to provide users with insightful and context-aware responses. Utilizing multiple advanced language models, this system retrieves relevant information from a vector database, refines user prompts, and generates optimized responses. The application features real-time streaming of responses, a comprehensive analysis page to review the performance of different models, and a 3D visualization of database vectors. Ideal for users seeking an interactive, informative, and efficient AI-assisted conversation experience.
+
+## Setup
+
+### 1. Create a Python Environment
+
+Create a new Python environment using your preferred method. For example, using `venv`:
+```sh
+python3 -m venv AssistantLM-env
+```
+### 2. Clone the Repository
+Clone the repository to your local machine:
+```sh
+git clone <Repository_URL>
+```
+### 3. Navigate to the Project Directory
+Change directory to the project directory:
+```sh
+cd AssistantLM-env/AssistantLM
+```
+### 4. Install Dependencies
+Install the required Python packages:
+```sh
+pip install -r requirements.txt
+pip install python-dotenv
+python -m spacy download en_core_web_sm
+```
+### 5. Set Up Environment Variables
+Create a .env file in the project directory and add your API keys and sensitive information:
+```env
+OPEN_AI_API_KEY=<Key>
+PINECONE_API_KEY=<Key>
+PROJ=<Proj>
+```
+### 6. Export Replicate API Token
+Export your Replicate API token:
+```sh
+export REPLICATE_API_TOKEN=<API_Token>
+```
+### 7. Navigate to the Frontend Directory
+Change directory to the frontend source directory:
+```sh
+cd src/frontend
+```
+### 8. Run the Application
+Run the application using Python:
+```sh
+python3 main.py
+```
+## Tools
+
+1. **Pinecone**: Pinecone is an excellent choice for vector databases due to its reliability and ease of implementation. It allows efficient and scalable storage and retrieval of high-dimensional vectors, making it perfect for machine learning and AI applications.
+
+2. **Sentence Transformer**: The Sentence Transformer encoder model, which uses BERT under the hood, is preferred over other encoders due to its speed and effectiveness in generating high-quality embeddings. It captures semantic meaning effectively, enhancing the relevance of retrieved information.
+
+3. **Selenium and BeautifulSoup for Web Scraping**: 
+  - **Selenium**: Selenium is a powerful tool for web automation, allowing interaction with web pages and extraction of dynamic content.
+  - **BeautifulSoup**: BeautifulSoup is used for parsing HTML and XML documents, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
 ## Website Design
 
 1. **Home Page**: The main page establishes a mature product and a brand identity, welcoming users to the AssistantLM platform. 
