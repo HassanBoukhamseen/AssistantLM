@@ -63,10 +63,10 @@ python3 main.py
   
 ## Website Design
 
-1. **Home Page**: The main page establishes a mature product and a brand identity, welcoming users to the AssistantLM platform.
-2. **Chat Page**: The chat page allows users to send messages and receive responses from four different LLM models. A machine learning model automatically determines the best response.
-3. **Chat History Analysis Page**: Clicking on the "Full Analysis" button in the chat page takes the user to a page that highlights the inner workings of the models.
-  - **3.1 Prompt Evolution**: A user prompt is first augmented with vectors that match the encoded prompt from the database. An LLM processes this prompt along with the contextual information to craft a coherent response. Finally, a lemmatizer optimizes the output, reducing the number of tokens and ensuring a cost-effective operation.
-  - **3.2 LLM Response Evaluation**: An LLM evaluates the responses of all the LLMs that attempt to answer the user’s prompt, providing detailed performance metrics for each model.
-  - **3.3 Database Vector Selection and Visualization**: Vectors stored in the database and the prompt are mapped to a lower dimensional space (3D) using UMAP to visualize the embeddings. This visualization, along with a table showing retrieved textual information and cosine similarity scores, helps users understand the model’s capabilities and the relevance of the information in the database.
+1. **Home Page**: The main page establishes a mature product and a brand identity, welcoming users to the AssistantLM platform. ![Alt Text](part1.gif)
+2. **Chat Page**: The chat page allows users to send messages and receive responses from four different LLM models. A machine learning model automatically determines the best response.  ![Alt Text](part2.gif)
+3. **Chat History Analysis Page**: Clicking on the "Full Analysis" button in the chat page takes the user to a page that highlights the inner workings of the models. 
+  - **3.1 Prompt Evolution**: A user prompt is first augmented with vectors that match the encoded prompt from the database. An LLM processes this prompt along with the contextual information to craft a coherent response. Finally, a lemmatizer optimizes the output, reducing the number of tokens and ensuring a cost-effective operation.  ![Alt Text](part3_1.gif)
+  - **3.2 LLM Response Evaluation**: An LLM evaluates the responses of all the LLMs that attempt to answer the user’s prompt, providing detailed performance metrics for each model.  ![Alt Text](part3_2.gif)
+  - **3.3 Database Vector Selection and Visualization**: Vectors stored in the database and the prompt are mapped to a lower dimensional space (3D) using UMAP to visualize the embeddings. This visualization, along with a table showing retrieved textual information and cosine similarity scores, helps users understand the model’s capabilities and the relevance of the information in the database.  ![Alt Text](part3_3.gif)
 ```
