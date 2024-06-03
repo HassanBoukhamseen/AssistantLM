@@ -54,31 +54,36 @@ Change directory to the project directory:
 ```sh
 cd AssistantLM
 ```
-### 4. Install Dependencies
+### 4. Activate Environment
+Activate the environment using the following command:
+```sh
+source bin/activate
+```
+### 5. Install Dependencies
 Install the required Python packages:
 ```sh
 pip install -r requirements.txt
 pip install python-dotenv
 python -m spacy download en_core_web_sm
 ```
-### 5. Set Up Environment Variables
+### 6. Set Up Environment Variables
 Create a .env file in the project directory and add your API keys and sensitive information:
 ```env
 OPEN_AI_API_KEY=<Key>
 PINECONE_API_KEY=<Key>
 PROJ=<Proj>
 ```
-### 6. Export Replicate API Token
+### 7. Export Replicate API Token
 Export your Replicate API token:
 ```sh
 export REPLICATE_API_TOKEN=<API_Token>
 ```
-### 7. Navigate to the Frontend Directory
+### 8. Navigate to the Frontend Directory
 Change directory to the frontend source directory:
 ```sh
 cd src/frontend
 ```
-### 8. Run the Application
+### 9. Run the Application
 Run the application using Python:
 ```sh
 python3 main.py
