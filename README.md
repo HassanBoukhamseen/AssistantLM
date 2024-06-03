@@ -49,15 +49,16 @@ Clone the repository to your local machine:
 ```sh
 git clone <Repository_URL>
 ```
-### 3. Navigate to the Project Directory
-Change directory to the project directory:
-```sh
-cd AssistantLM
-```
-### 4. Activate Environment
+### 3. Activate Environment
 Activate the environment using the following command:
 ```sh
 source bin/activate
+```
+
+### 4. Navigate to the Project Directory
+Change the directory to the project directory:
+```sh
+cd AssistantLM
 ```
 ### 5. Install Dependencies
 Install the required Python packages:
