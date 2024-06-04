@@ -22,13 +22,13 @@
         <h1>{{chatHist}}</h1>
         <div class="container" style="width: 80%; display: block; margin-left: 15%;">
             <div class="row align-items-center">
-                <!-- Text and Buttons on the Left, with reduced width -->
+               
                 <div class="col-lg-6">
                     <h1 style="font-size: 36px; font-weight: bold;">Get To Know How Our Models Work!</h1>
                     <p style="font-size: 18px; max-width: 80%;">Welcome to our interactive insights page! Here, you'll uncover the magic behind our AI-driven system, gaining a deeper understanding of its capabilities and how to harness its full potential. Dive in to see how our cutting-edge technology works seamlessly to provide you with the best possible experience.</p>
                 </div>
         
-                <!-- Logo on the Right, now using a smaller column -->
+               
                 <div class="col-lg-6 d-flex justify-content-end">
                     <img src="{{ url_for('static', filename='analyser.png') }}" alt="AssistantLM Logo" width="512" height="512" style="width: 512px; height: 512px;">
                 </div>
@@ -120,12 +120,10 @@
         socket.on("receive_embeddings", function(embeddings) {
             embeddings = JSON.parse(embeddings);
             console.log(embeddings);
-            // Extracting x, y, z coordinates
             var x = embeddings.map(e => e[0]);
             var y = embeddings.map(e => e[1]);
             var z = embeddings.map(e => e[2]);
 
-            // Defining traces
             var trace1 = {
                 x: x.slice(0, -1),
                 y: y.slice(0, -1),
@@ -165,18 +163,16 @@
                 }
             };
 
-            Plotly.newPlot('plot', data, layout); // This line was missing
+            Plotly.newPlot('plot', data, layout); 
         });
         
         socket.on("receive_scores", function(scores) {
             scores = JSON.parse(scores);
             console.log(scores);
 
-            // Create the table element
             var table = document.createElement('table');
             table.className = 'table table-striped';
 
-            // Create the table header
             var thead = document.createElement('thead');
             var headerRow = document.createElement('tr');
             
@@ -208,9 +204,8 @@
 
             table.appendChild(tbody);
 
-            // Insert the table into the div with id 'cos-sim-table'
             var tableDiv = document.getElementById('cos-sim-table');
-            tableDiv.innerHTML = ''; // Clear any existing content
+            tableDiv.innerHTML = '';
             tableDiv.appendChild(table);
         });
 
